@@ -55,7 +55,7 @@ public class DomainSpider {
         url = findByNameBaseBaidu(name);
 
         if (url != null && url.trim().length() > 0) {
-            url = url.replace("www.", "").replaceAll("https+", "");
+            url = url.replace("www.", "").replaceAll("https?", "");
             url = url.substring(0, url.lastIndexOf("/") == -1 ? url.length() : url.lastIndexOf("/"));
         }
         return url.trim();
