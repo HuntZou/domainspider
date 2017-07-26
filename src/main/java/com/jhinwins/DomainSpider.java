@@ -34,8 +34,8 @@ public class DomainSpider {
     public static final String SPEED_EXACT = "exact";
 
     public static void main(String[] params) throws IOException, BiffException, ClassNotFoundException, SQLException {
-        String url = new DomainSpider().getUrlByName("人人网",SPEED_EXACT);
-        System.out.println("人人网 url ：" + url);
+        String url = new DomainSpider().getUrlByName("中国财富网", DomainSpider.SPEED_EXACT);
+        System.out.println("中国财富网 url ：" + url);
     }
 
     /**
@@ -125,7 +125,7 @@ public class DomainSpider {
 
             String baseUrl = "";
             if (BASEON_BAIDU.equals(baseOn)) {
-                baseUrl = "http://www.baidu.com/s?wd=" + name + "主页";
+                baseUrl = "http://www.baidu.com/s?wd=" + (name.endsWith("网") ? name : (name + "主页"));
             } else if (BASEON_CHINAZ.equals(baseOn)) {
                 baseUrl = "http://search.top.chinaz.com/Search.aspx?url=" + name;
             }
